@@ -13,7 +13,7 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 #### BONUS
 - [ ] (2pts) Views should be responsive for both landscape/portrait mode.
-    - [ ] (1pt) In portrait mode, the poster image, title, and movie overview is shown.
+    - [x] (1pt) In portrait mode, the poster image, title, and movie overview is shown.
     - [ ] (1pt) In landscape mode, the rotated alternate layout should use the backdrop image instead and show the title and movie overview to the right of it.
 
 - [x] (2pts) Display a nice default placeholder graphic for each image during loading
