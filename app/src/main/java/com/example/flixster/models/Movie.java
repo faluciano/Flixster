@@ -32,7 +32,6 @@ public class Movie {
 
     public String getBackdropPath() {
         if (!backdropPath.equals("null")) {
-            Log.i("MovieB", String.valueOf(backdropPath!=null)+backdropPath);
             return String.format("https://image.tmdb.org/t/p/w342/%s", backdropPath);
         }
         return getPosterPath();
