@@ -2,12 +2,12 @@ package com.example.flixster.adapters;
 
 import android.content.Context;
 import android.content.res.Configuration;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +33,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View movieView = LayoutInflater.from(context).inflate(R.layout.item_movie, parent,false);
+        movieView.setOnClickListener(view -> {
+            CharSequence text = "Hello toast!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        });
         return new ViewHolder(movieView);
     }
 
