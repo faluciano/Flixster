@@ -17,7 +17,7 @@ public class Movie {
     String overview;
     String backdropPath;
     double voteAverage;
-    String popularity;
+    double popularity;
     Integer id;
 
     public Movie(){
@@ -30,7 +30,7 @@ public class Movie {
         overview = jsonObject.getString("overview");
         backdropPath = jsonObject.getString("backdrop_path");
         voteAverage = jsonObject.getDouble("vote_average");
-        popularity = jsonObject.getString("popularity");
+        popularity = jsonObject.getDouble("popularity");
         id = jsonObject.getInt("id");
     }
 
@@ -65,7 +65,7 @@ public class Movie {
         return (float) voteAverage/2;
     }
 
-    public String getPopularity() {
+    public double getPopularity() {
         return popularity;
     }
 
