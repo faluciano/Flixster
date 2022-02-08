@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.example.flixster.models.Movie;
+
+import org.parceler.Parcels;
+
 public class DetailActivity extends AppCompatActivity {
 
     TextView tvTitle;
@@ -22,7 +26,9 @@ public class DetailActivity extends AppCompatActivity {
         tvOverview = findViewById(R.id.tvDetailOverview);
         ratingBar = findViewById(R.id.ratingBar);
 
-        String title = getIntent().getStringExtra("title");
-        tvTitle.setText(title);
+        Movie movie = Parcels.unwrap(getIntent().getParcelableExtra("movie"));
+        tvTitle.setText(movie.getTitle());
+        tvOverview.setText(movie.getOverview());
+        ratingBar.setRating(movie.getVoteAverage());
     }
 }
