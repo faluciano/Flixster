@@ -4,14 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityOptionsCompat;
@@ -22,9 +20,7 @@ import com.bumptech.glide.load.MultiTransformation;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.flixster.DetailActivity;
-import com.example.flixster.MainActivity;
 import com.example.flixster.R;
 import com.example.flixster.models.Movie;
 
@@ -53,7 +49,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         //Get the movie at the position
         Movie movie = movies.get(position);
-        //Bind the movie data into the viewholder
+        //Bind the movie data into the viewHolder
         holder.bind(movie);
 
     }
@@ -89,8 +85,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             else{
                 imageUrl = movie.getPosterPath();
             }
-//            RequestOptions requestOptions = new RequestOptions();
-//            requestOptions = requestOptions.transforms(new CenterCrop(), new RoundedCorners(16));
+
             Glide.with(context)
                     .load(imageUrl)
                     .transform(new MultiTransformation<>(new CenterCrop(), new RoundedCorners(16)))
