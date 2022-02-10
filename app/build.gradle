@@ -1,7 +1,9 @@
 plugins {
     id 'com.android.application'
 }
-
+def localPropertiesFile = rootProject.file("local.properties")
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(localPropertiesFile))
 android {
     compileSdk 31
 
@@ -11,7 +13,7 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
+        buildConfigField "String", "GOOGLE_KEY", localProperties['GOOGLE_KEY']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
